@@ -1,11 +1,11 @@
 #!/bin/bash
 
-read -p $'\e[1mEnter the desired path: \e[0m' path
+read -p $'\e[1mEnter the desired path (default: current directory): \e[0m' path
 path=${path:-$PWD}
 
 
 if [ ! -d "$path" ]; then
-    echo -e "\e[1;31mDirectory '$path' not found!\e[0m"  # Bold red for errors
+    echo -e "\e[1;31mDirectory '$path' not found!\e[0m"  
     exit 1
 fi
 
