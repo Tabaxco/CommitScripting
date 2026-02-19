@@ -60,4 +60,5 @@ echo "Pushing files"
 git commit -m "$TYPE: $commit_message" || exit 1
 git push
 
+echo
 echo "Files successfully pushed to GitHub!"
