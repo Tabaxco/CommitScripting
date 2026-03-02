@@ -52,12 +52,12 @@ echo -e "\e[1mMessage:\e[0m $commit_message"
 echo
 
 echo -e "\e[1mDo you want to push it?"
-finaloptions=("y" "n")
+finaloptions=("yes" "no")
 select fopt in "${finaloptions[@]}"
 do
 	case $fopt in 
-		"y") TYPE="yes"; break;;
-		"n") git add $what_commit && git commit -m "$TYPE: $commit_message" && echo &&  echo "Files committed" && exit
+		"yes") TYPE="yes"; break;;
+		"no") git add $what_commit && git commit -m "$TYPE: $commit_message" && echo &&  echo "Files committed" && exit
 	esac
 done
 
