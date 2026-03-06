@@ -56,8 +56,14 @@ finaloptions=("yes" "no")
 select fopt in "${finaloptions[@]}"
 do
 	case $fopt in 
-		"yes") TYPE="yes"; break;;
-		"no") git add $what_commit && git commit -m "$TYPE: $commit_message" && echo &&  echo "Files committed" && exit
+		"yes") break;;
+		"no") 
+			git add $what_commit 
+			git commit -m "$TYPE: $commit_message" 
+			echo 
+			echo "Files committed"
+			exit
+		;;
 	esac
 done
 
